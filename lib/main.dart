@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   /* Our color codes: #0d173c 
   #0cdec8     #b7e1dd.   #f0f5f7 */
+  // somthing is off with git
 
   @override
   Widget build(BuildContext context) {
