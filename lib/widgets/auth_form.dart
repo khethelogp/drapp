@@ -45,34 +45,7 @@ class _AuthFormState extends State<AuthForm> {
     }
   }
 
-/* 
-  Widget _buildPasswordField (String key, String label){
-    return TextFormField(
-      key: ValueKey(key),
-      obscureText: !_passwordVisible,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(),
-        labelText: label,
-        // hintText: 'Enter your password',
-        suffixIcon: IconButton(
-          icon: Icon(
-            _passwordVisible ? Icons.visibility_off : Icons.visibility,
-            color: Theme.of(context).primaryColor,
-          ),
-          onPressed: _toggleVisibility 
-        )
-      ),
-      validator: (value) {
-        if(value!.isEmpty || value.length < 6) {
-          return 'Password must be atleast 7 characters long';
-        }
-        return null;
-      },
-      onSaved: (value) {
-        _userPassword = value!;
-      },
-    );
-  } */
+
 
   @override
   Widget build(BuildContext context) {
@@ -241,3 +214,35 @@ class _AuthFormState extends State<AuthForm> {
     );
   }
 }
+
+
+
+
+/* 
+  Widget _buildPasswordField (String key, String label){
+    return TextFormField(
+      key: ValueKey(key),
+      obscureText: !_passwordVisible,
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(),
+        labelText: label,
+        // hintText: 'Enter your password',
+        suffixIcon: IconButton(
+          icon: Icon(
+            _passwordVisible ? Icons.visibility_off : Icons.visibility,
+            color: Theme.of(context).primaryColor,
+          ),
+          onPressed: _toggleVisibility 
+        )
+      ),
+      validator: (value) {
+        if(value!.isEmpty || value.length < 6) {
+          return 'Password must be atleast 7 characters long';
+        }
+        return null;
+      },
+      onSaved: (value) {
+        _userPassword = value!;
+      },
+    );
+  } */
