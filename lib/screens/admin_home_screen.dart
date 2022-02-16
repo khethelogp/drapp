@@ -1,13 +1,12 @@
 import 'package:drapp/user_tabs.dart';
 import 'package:drapp/widgets/header.dart';
 import 'package:drapp/widgets/link_item.dart';
-import 'package:drapp/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+class AdminHomeScreen extends StatelessWidget {
+  const AdminHomeScreen({ Key? key }) : super(key: key);
 
-  static const routeName = '/home';
+  static const routeName = '/admin';
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Welcome User',
+                        'Welcome Admin',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w500
@@ -40,14 +39,14 @@ class HomeScreen extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         crossAxisCount: 3,
                         children: 
-                          LINKS.map(
+                          ADMIN_LINKS.map(
                             (e) => LinkItem(e.id, e.title,e.icon, e.color)
                           ).toList(),    
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40,),
-                  PrimaryButton('Book New Appointment')
+                  // const SizedBox(height: 40,),
+                  // PrimaryButton('Book New Appointment')
                 ],
               ),
             ),
@@ -57,4 +56,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

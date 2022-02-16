@@ -1,3 +1,5 @@
+import 'package:drapp/screens/admin_home_screen.dart';
+import 'package:drapp/screens/user-screens/availability_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:drapp/screens/auth_screen.dart';
@@ -19,13 +21,21 @@ class MyApp extends StatelessWidget {
       title: 'Dr App',
       theme: ThemeData(
         primaryColor: const Color(0xFF0CDEC8),
+        accentColor: const Color(0xFFB7E1DD),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color(0xFF0CDEC8),
           secondary: const Color(0xFFB7E1DD),
         )
       ),
-      home: const HomeScreen(),
+      home: const Availability(),
+      // home: const HomeScreen(),
       // home: const AuthScreen(),
+      // initialRoute: '/', 
+      routes: {
+        // '/': (ctx) => AdminHomeScreen(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+        AdminHomeScreen.routeName: (ctx) => AdminHomeScreen(),
+      },
     );
   }
 }

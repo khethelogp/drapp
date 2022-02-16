@@ -1,57 +1,57 @@
 import 'package:drapp/models/links.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 
-const DUMMY_CATEGORIES = const [
+const LINKS = [
   Link(
     id: 'c1',
-    title: 'Italian',
-    color: Colors.purple,
+    title: 'Availability',
+    icon: Icons.calendar_today_rounded,
+    color: Colors.grey,
   ),
   Link(
     id: 'c2',
-    title: 'Quick & Easy',
+    title: 'Bookings',
+    icon: Icons.bookmark_add,
     color: Colors.red,
   ),
   Link(
     id: 'c3',
-    title: 'Hamburgers',
+    title: 'Profile',
+    icon: Icons.account_circle,
+    color: Colors.orange,
+  ),
+];
+
+const ADMIN_LINKS = [
+  Link(
+    id: 'a1',
+    title: 'Add user',
+    icon: Icons.person_add,
+    color: Colors.grey,
+  ),
+  Link(
+    id: 'a2',
+    title: 'Update user',
+    icon: Icons.account_circle,
+    color: Colors.red,
+  ),
+  Link(
+    id: 'a3',
+    title: 'Users',
+    icon: Icons.people,
     color: Colors.orange,
   ),
   Link(
-    id: 'c4',
-    title: 'German',
-    color: Colors.amber,
-  ),
-  Link(
-    id: 'c5',
-    title: 'Light & Lovely',
-    color: Colors.blue,
-  ),
-  Link(
-    id: 'c6',
-    title: 'Exotic',
-    color: Colors.green,
-  ),
-  Link(
-    id: 'c7',
-    title: 'Breakfast',
-    color: Colors.lightBlue,
-  ),
-  Link(
-    id: 'c8',
-    title: 'Asian',
+    id: 'a4',
+    title: 'Availability',
+    icon: Icons.calendar_today_rounded,
     color: Colors.lightGreen,
   ),
   Link(
-    id: 'c9',
-    title: 'French',
+    id: 'a5',
+    title: 'Bookings',
+    icon: Icons.bookmark_add,
     color: Colors.pink,
-  ),
-  Link(
-    id: 'c10',
-    title: 'Summer',
-    color: Colors.teal,
   ),
 ];
