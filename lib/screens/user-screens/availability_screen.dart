@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class Availability extends StatelessWidget {
   const Availability({ Key? key }) : super(key: key);
 
+  static const routeName = '/availability';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +96,16 @@ class Availability extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Text(
+                            'We are available on',
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              color: Theme.of(context).errorColor
+                            ),
+                          ),
+                          const SizedBox(height: 20),
                           Text('Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eveniet repellat officia nesciunt ea excepturi obcaecati quaerat repellendus quasi fuga, laborum ex quidem voluptatibus nam cupiditate tempore sequi optio alias error dolor exercitationem! Adipisci alias similique magni quisquam quos! Excepturi consequuntur, aliquam possimus aperiam quae fugit recusandae placeat ex voluptatem?'),
                           SizedBox(height: 20,),
                           PrimaryButton('Something')

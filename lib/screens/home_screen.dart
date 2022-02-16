@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: [
+                    children: const <Widget>[
                       Text(
                         'Welcome User',
                         style: TextStyle(

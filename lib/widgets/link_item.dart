@@ -1,3 +1,4 @@
+import 'package:drapp/screens/user-screens/availability_screen.dart';
 import 'package:flutter/material.dart';
 
 class LinkItem extends StatelessWidget {
@@ -6,13 +7,22 @@ class LinkItem extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-
   LinkItem(this.id, this.title, this.icon ,this.color);
+
+  void selectedLink(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      Availability.routeName,
+      // arguments: {
+      //   'id': id,
+      //   'title': title,
+      // },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => (){},
+      onTap: () => selectedLink(context),
       splashColor: Theme.of(context).accentColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
