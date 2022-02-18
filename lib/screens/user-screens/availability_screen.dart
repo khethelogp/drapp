@@ -62,68 +62,56 @@ class Availability extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              color: Colors.red,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Positioned(
-                    bottom: 400,
-                    child: Container(
-                      color: Colors.green,
-                      height: 200,
-                      child: Text('Something')),
-                  ),
-                  Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Center(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Card(
-                        elevation: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                child: Text(
-                                  'We are available on',
-                                  textAlign: TextAlign.start,
-                                  style:
-                                      TextStyle(color: Theme.of(context).errorColor),
-                                ),
+            Stack(clipBehavior: Clip.none, children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Card(
+                      elevation: 50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: double.infinity,
+                              child: Text(
+                                'We are available on',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Theme.of(context).errorColor),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: aTime.length,
-                                itemBuilder: (ctx, index) => TimeItem(
-                                    aTime[index]['day'], aTime[index]['hours']),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                'Lunch time 13:00pm - 14:00pm Everyday.',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              PrimaryButton('Book New Appointment')
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: aTime.length,
+                              itemBuilder: (ctx, index) => TimeItem(
+                                  aTime[index]['day'], aTime[index]['hours']),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Text(
+                              'Lunch time 13:00pm - 14:00pm Everyday.',
+                              style: TextStyle(fontSize: 12),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            PrimaryButton('Book New Appointment')
+                          ],
                         ),
                       ),
                     ),
                   ),
-                ),]
+                ),
               ),
-            ),
+            ]),
           ],
         ),
       ),
