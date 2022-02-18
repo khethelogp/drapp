@@ -5,13 +5,14 @@ class LinkItem extends StatelessWidget {
   final String id;
   final String title;
   final IconData icon;
+  final String route;
   final Color color;
 
-  LinkItem(this.id, this.title, this.icon ,this.color);
+  LinkItem(this.id, this.title, this.icon, this.route, this.color);
 
   void selectedLink(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-      Availability.routeName,
+      route,
       // arguments: {
       //   'id': id,
       //   'title': title,

@@ -18,4 +18,16 @@ final List aTime =[
   {'day': 'Sunday', 'hours': 'Holiday'}
 ];
 
+const AVAILABLE_TIMES = [
+  {'time': '10:00 AM'},
+  {'time': '11:00 AM'},
+  {'time': '12:00 PM'},
+  {'time': '13:00 PM'},
+  {'time': '14:00 PM'},
+  {'time': '15:00 PM'},
+  {'time': '16:00 PM'},
+  {'time': '17:00 PM'},
+  {'time': '18:00 PM'},
+];
+
 

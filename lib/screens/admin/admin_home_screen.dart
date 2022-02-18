@@ -20,7 +20,7 @@ class AdminHomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: [
+                    children: const <Widget> [
                       Text(
                         'Welcome Admin',
                         style: TextStyle(
@@ -40,7 +40,7 @@ class AdminHomeScreen extends StatelessWidget {
                         crossAxisCount: 3,
                         children: 
                           ADMIN_LINKS.map(
-                            (e) => LinkItem(e.id, e.title,e.icon, e.color)
+                            (e) => LinkItem(e.id, e.title, e.icon, e.route, e.color)
                           ).toList(),    
                       ),
                     ],
