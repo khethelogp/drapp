@@ -25,16 +25,27 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color(0xFF0CDEC8),
           secondary: const Color(0xFFB7E1DD),
+        ),
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.black
+          ),
+          color: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Colors.black
+          )
         )
       ),
-      home: const Availability(),
+      home: Availability(),
       // home: const HomeScreen(),
+      // home: const AdminHomeScreen(),
       // home: const AuthScreen(),
       // initialRoute: '/', 
       routes: {
         // '/': (ctx) => AdminHomeScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => AdminHomeScreen(),
+        Availability.routeName: (ctx) => Availability()
       },
     );
   }

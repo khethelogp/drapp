@@ -1,22 +1,26 @@
+import 'package:drapp/data/available_times.dart';
+import 'package:drapp/models/times.dart';
 import 'package:drapp/screens/home_screen.dart';
 import 'package:drapp/widgets/primary_button.dart';
+import 'package:drapp/widgets/time_item.dart';
 import 'package:flutter/material.dart';
 
 class Availability extends StatelessWidget {
-  const Availability({ Key? key }) : super(key: key);
+  // const Availability({ Key? key }) : super(key: key);
+
+  static const routeName = '/availability';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Availability'),
-        leading: IconButton(
-          onPressed: (){
-            Navigator.of(context).pushNamed(HomeScreen.routeName);
-          }, 
-          icon: const Icon(Icons.arrow_back),
-        )
-      ),
+          title: Text('Availability'),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(HomeScreen.routeName);
+            },
+            icon: const Icon(Icons.arrow_back),
+          )),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -27,21 +31,16 @@ class Availability extends StatelessWidget {
                   alignment: Alignment.center,
                   height: 240,
                   child: Image.asset(
-                    'assets/images/bg-2.jpeg', 
+                    'assets/images/bg-2.jpeg',
                     fit: BoxFit.fill,
                   ),
                 ),
                 Container(
                   decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.white38,
-                        Colors.white70
-                      ]
-                    )
-                  ),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.white38, Colors.white70])),
                   // color: Colors.white38,
                   height: 240,
                 ),
@@ -53,58 +52,66 @@ class Availability extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 100,
-                          width: 150,
-                          child: Image.asset('assets/images/logo.png')
-                        ),
+                            height: 100,
+                            width: 150,
+                            child: Image.asset('assets/images/logo.png')),
                         const Text('App Name')
                       ],
                     ),
                   ),
                 ),
-                /* Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Center(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Card(
-                        elevation: 10,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            children: [
-                              Text('Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eveniet repellat officia nesciunt ea excepturi obcaecati quaerat repellendus quasi fuga, laborum ex quidem voluptatibus nam cupiditate tempore sequi optio alias error dolor exercitationem! Adipisci alias similique magni quisquam quos! Excepturi consequuntur, aliquam possimus aperiam quae fugit recusandae placeat ex voluptatem?'),
-                              PrimaryButton('Something')
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ) */
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Center(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Card(
-                    elevation: 50,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          Text('Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eveniet repellat officia nesciunt ea excepturi obcaecati quaerat repellendus quasi fuga, laborum ex quidem voluptatibus nam cupiditate tempore sequi optio alias error dolor exercitationem! Adipisci alias similique magni quisquam quos! Excepturi consequuntur, aliquam possimus aperiam quae fugit recusandae placeat ex voluptatem?'),
-                          SizedBox(height: 20,),
-                          PrimaryButton('Something')
-                        ],
+            Stack(clipBehavior: Clip.none, children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Card(
+                      elevation: 50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: double.infinity,
+                              child: Text(
+                                'We are available on',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Theme.of(context).errorColor),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: aTime.length,
+                              itemBuilder: (ctx, index) => TimeItem(
+                                  aTime[index]['day'], aTime[index]['hours']),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Text(
+                              'Lunch time 13:00pm - 14:00pm Everyday.',
+                              style: TextStyle(fontSize: 12),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            PrimaryButton('Book New Appointment')
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
+            ]),
           ],
         ),
       ),

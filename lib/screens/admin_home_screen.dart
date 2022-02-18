@@ -1,4 +1,4 @@
-import 'package:drapp/user_tabs.dart';
+import 'package:drapp/data/user_tabs.dart';
 import 'package:drapp/widgets/header.dart';
 import 'package:drapp/widgets/link_item.dart';
 import 'package:flutter/material.dart';

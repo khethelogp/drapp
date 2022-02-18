@@ -1,4 +1,4 @@
-import 'package:drapp/user_tabs.dart';
+import 'package:drapp/data/user_tabs.dart';
 import 'package:drapp/widgets/header.dart';
 import 'package:drapp/widgets/link_item.dart';
 import 'package:drapp/widgets/primary_button.dart';
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: [
+                    children: const <Widget>[
                       Text(
                         'Welcome User',
                         style: TextStyle(
