@@ -184,7 +184,7 @@ class _AuthFormState extends State<AuthForm> {
                       const SizedBox(height: 10.0,),
                       if(widget.isLoading)
                         const CircularProgressIndicator(),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
