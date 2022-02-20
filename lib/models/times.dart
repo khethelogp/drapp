@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Time {
   final String id;
   final String day;

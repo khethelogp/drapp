@@ -4,7 +4,7 @@ class PrimaryButton extends StatelessWidget {
   // const PrimaryBUtton({ Key? key }) : super(key: key);
   final String btnText;
 
-  PrimaryButton(this.btnText);
+  const PrimaryButton(this.btnText);
 
   @override
   Widget build(BuildContext context) {

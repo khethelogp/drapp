@@ -1,4 +1,3 @@
-import 'package:drapp/screens/user-screens/availability_screen.dart';
 import 'package:flutter/material.dart';
 
 class LinkItem extends StatelessWidget {
@@ -24,7 +23,7 @@ class LinkItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => selectedLink(context),
-      splashColor: Theme.of(context).accentColor,
+      splashColor: Theme.of(context).colorScheme.secondary,
       borderRadius: BorderRadius.circular(15),
       child: Container(
         margin: const EdgeInsets.all(5),
@@ -36,7 +35,7 @@ class LinkItem extends StatelessWidget {
             Icon(
               icon, 
               size: 40, 
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             Text(
               title,
@@ -46,7 +45,7 @@ class LinkItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Theme.of(context).accentColor, 
+            color: Theme.of(context).colorScheme.secondary, 
             width: 2
           ),
           // gradient: LinearGradient(

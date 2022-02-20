@@ -17,19 +17,23 @@ class BookingScreen extends StatefulWidget {
 class _BookingScreenState extends State<BookingScreen> {
   final _formKey = GlobalKey<FormState>();
   String _fullName = '';
-  String _phone = '';
+  final String _phone = '';
   // var today = DateTime.now();
 
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     print(args.value);
   }
 
+  void _onSubmit(){ 
+    print(_fullName);
+    print(_phone);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Bookings'),
+          title: const Text('Bookings'),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
@@ -82,7 +86,7 @@ class _BookingScreenState extends State<BookingScreen> {
                         GridView.count(
                         shrinkWrap: true,
                         crossAxisCount: 3,
-                        children: AVAILABLE_TIMES.map((e) => HourItem(e.hours)).toList(),
+                        children: availableTimes.map((e) => HourItem(e.hours)).toList(),
                       ),
                       ]
                     ),
@@ -155,7 +159,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                 padding: const EdgeInsets.all(20)
                               ),
                               child: const Text('Book'),
-                              onPressed: (){}, 
+                              onPressed: _onSubmit, 
                             ),
                           )
                         ],

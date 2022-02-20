@@ -1,12 +1,11 @@
 import 'package:drapp/data/available_times.dart';
-import 'package:drapp/models/times.dart';
 import 'package:drapp/screens/user-screens/home_screen.dart';
 import 'package:drapp/widgets/primary_button.dart';
 import 'package:drapp/widgets/time_item.dart';
 import 'package:flutter/material.dart';
 
 class Availability extends StatelessWidget {
-  // const Availability({ Key? key }) : super(key: key);
+  const Availability({ Key? key }) : super(key: key);
 
   static const routeName = '/availability';
 
@@ -14,7 +13,7 @@ class Availability extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Availability'),
+          title: const Text('Availability'),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pushNamed(HomeScreen.routeName);
@@ -75,7 +74,7 @@ class Availability extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               width: double.infinity,
                               child: Text(
                                 'We are available on',

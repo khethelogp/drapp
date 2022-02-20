@@ -1,6 +1,6 @@
 import 'package:drapp/models/times.dart';
 
-const AVAILABLE_TIMES = [
+const availableTimes = [
   Time(id: '1', day: 'Everyday', hours: '10:00am'),
   Time(id: '1', day: 'Everyday', hours: '11:00am'),
   Time(id: '1', day: 'Everyday', hours: '12:00pm'),

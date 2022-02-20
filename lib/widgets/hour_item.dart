@@ -10,9 +10,9 @@ class HourItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      splashColor: Theme.of(context).accentColor,
+      splashColor: Theme.of(context).colorScheme.secondary,
       borderRadius: BorderRadius.circular(15),
-      focusColor: Theme.of(context).accentColor,
+      focusColor: Theme.of(context).colorScheme.secondary,
       child: Container(
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(10),
@@ -28,7 +28,7 @@ class HourItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Theme.of(context).accentColor, 
+            color: Theme.of(context).colorScheme.secondary, 
             width: 2
           ),
           borderRadius: BorderRadius.circular(15),

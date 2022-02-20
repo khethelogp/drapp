@@ -14,7 +14,7 @@ class AdminHomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Header(),
+            const Header(),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(

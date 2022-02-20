@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Header(),
+            const Header(),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 40,),
-                  PrimaryButton('Book New Appointment')
+                  const PrimaryButton('Book New Appointment')
                 ],
               ),
             ),
