@@ -1,9 +1,11 @@
-import 'package:drapp/screens/admin_home_screen.dart';
+import 'package:drapp/screens/admin/admin_home_screen.dart';
+import 'package:drapp/screens/page_not_found.dart';
 import 'package:drapp/screens/user-screens/availability_screen.dart';
+import 'package:drapp/screens/user-screens/booking_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:drapp/screens/auth_screen.dart';
-import 'package:drapp/screens/home_screen.dart';
+import 'package:drapp/screens/user-screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,13 +32,15 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(
             color: Colors.black
           ),
+          elevation: 0,
           color: Colors.white,
           titleTextStyle: TextStyle(
             color: Colors.black
           )
         )
       ),
-      home: Availability(),
+      home: BookingScreen(),
+      // home: Availability(),
       // home: const HomeScreen(),
       // home: const AdminHomeScreen(),
       // home: const AuthScreen(),
@@ -45,8 +49,12 @@ class MyApp extends StatelessWidget {
         // '/': (ctx) => AdminHomeScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => AdminHomeScreen(),
-        Availability.routeName: (ctx) => Availability()
+        Availability.routeName: (ctx) => Availability(),
+        BookingScreen.routeName: (ctx) => BookingScreen(),
       },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => const PageNotFound());
+      }
     );
   }
 }

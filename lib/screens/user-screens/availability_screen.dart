@@ -1,6 +1,6 @@
 import 'package:drapp/data/available_times.dart';
 import 'package:drapp/models/times.dart';
-import 'package:drapp/screens/home_screen.dart';
+import 'package:drapp/screens/user-screens/home_screen.dart';
 import 'package:drapp/widgets/primary_button.dart';
 import 'package:drapp/widgets/time_item.dart';
 import 'package:flutter/material.dart';

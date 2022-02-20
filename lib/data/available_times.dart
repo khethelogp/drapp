@@ -1,12 +1,16 @@
-// const AVAILABLE_TIMES = [
-//   Time(id: '1', day: 'Monday', availableTimes: '09:00am - 19:00pm'),
-//   Time(id: '2', day: 'Tuesday', availableTimes: '09:00am - 19:00pm'),
-//   Time(id: '3', day: 'Wednesday', availableTimes: '09:00am - 19:00pm'),
-//   Time(id: '4', day: 'Thursday', availableTimes: '09:00am - 19:00pm'),
-//   Time(id: '5', day: 'Friday', availableTimes: '09:00am - 19:00pm'),
-//   Time(id: '6', day: 'Saturday', availableTimes: '09:00am - 17:00pm'),
-//   Time(id: '7', day: 'Sunday', availableTimes: 'Holiday')
-// ];
+import 'package:drapp/models/times.dart';
+
+const AVAILABLE_TIMES = [
+  Time(id: '1', day: 'Everyday', hours: '10:00am'),
+  Time(id: '1', day: 'Everyday', hours: '11:00am'),
+  Time(id: '1', day: 'Everyday', hours: '12:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '13:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '14:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '15:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '16:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '17:00pm'),
+  Time(id: '1', day: 'Everyday', hours: '18:00pm'),
+];
 
 final List aTime =[
   {'day' : 'Monday', 'hours': '09:00am - 19:00pm'},
@@ -17,5 +21,8 @@ final List aTime =[
   {'day' : 'Saturday', 'hours': '09:00am - 17:00pm'},
   {'day': 'Sunday', 'hours': 'Holiday'}
 ];
+
+
+
 
 

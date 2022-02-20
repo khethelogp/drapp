@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                         crossAxisCount: 3,
                         children: 
                           LINKS.map(
-                            (e) => LinkItem(e.id, e.title,e.icon, e.color)
+                            (e) => LinkItem(e.id, e.title,e.icon,e.route, e.color)
                           ).toList(),    
                       ),
                     ],
