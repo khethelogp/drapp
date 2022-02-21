@@ -1,10 +1,10 @@
 import 'package:drapp/screens/admin/admin_home_screen.dart';
 import 'package:drapp/screens/page_not_found.dart';
-import 'package:drapp/screens/user-screens/availability_screen.dart';
-import 'package:drapp/screens/user-screens/booking_screen.dart';
+import 'package:drapp/screens/client/availability_screen.dart';
+import 'package:drapp/screens/client/booking_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:drapp/screens/user-screens/home_screen.dart';
+import 'package:drapp/screens/client/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

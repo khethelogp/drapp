@@ -1,5 +1,5 @@
 import 'package:drapp/data/available_times.dart';
-import 'package:drapp/screens/user-screens/home_screen.dart';
+import 'package:drapp/screens/client/home_screen.dart';
 import 'package:drapp/widgets/hour_item.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
