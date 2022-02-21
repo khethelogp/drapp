@@ -14,7 +14,7 @@ const LINKS = [
     id: 'c2',
     title: 'Bookings',
     icon: Icons.bookmark_add,
-    route: '/bookings',
+    route: '/appointments',
     color: Colors.red,
   ),
   Link(

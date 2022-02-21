@@ -25,15 +25,22 @@ class _BookingScreenState extends State<BookingScreen> {
   }
 
   void _onSubmit(){ 
-    print(_fullName);
-    print(_phone);
+    var isValid = _formKey.currentState?.validate();
+
+    if(isValid == true){
+      _formKey.currentState?.save();
+      print(_fullName);
+      print(_phone);
+    } else {
+      return;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Bookings'),
+          title: const Text('Book An Appointment'),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
@@ -111,13 +118,15 @@ class _BookingScreenState extends State<BookingScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           TextFormField(
-                            key: const ValueKey('fullName'),
+                            key: const ValueKey('name'),
                             autocorrect: true,
                             textCapitalization: TextCapitalization.words,
                             enableSuggestions: false,
                             validator: (value) {
-                              if(value!.isEmpty || value.length < 4){
-                                return 'Please enter a atleast 4 characters';
+                              if(value!.isEmpty) {
+                                return 'username is required';
+                              } else if (value.length < 4){
+                                return 'Please enter atleast 4 characters';
                               }
               
                               return null;
@@ -136,8 +145,9 @@ class _BookingScreenState extends State<BookingScreen> {
                             autocorrect: true,
                             textCapitalization: TextCapitalization.words,
                             enableSuggestions: false,
+                            keyboardType: TextInputType.phone,
                             validator: (value) {
-                              if(value!.isEmpty || value.length < 4){
+                              if(value!.isEmpty || value.length < 10){
                                 return 'Please enter a valid Phone Number';
                               }
               
