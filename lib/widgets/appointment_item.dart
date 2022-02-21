@@ -25,22 +25,76 @@ class _AppointmentItemState extends State<AppointmentItem> {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            color: Colors.redAccent,
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(width: 2, color: Theme.of(context).colorScheme.secondary)
+              )
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Text('Date')
+              children: <Widget>[
+                Text('Jul'),
+                Text('12', style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 30
+                ),),
+                Text('WED'),
               ],
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text('Something')
-            ],
+          Container(
+            color: Colors.red,
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  color: Colors.cyan,
+                  child: Row(
+                    children: <Widget> [
+                      Column(
+                        children: const <Widget> [
+                          Text('Time', style: TextStyle(fontSize: 14),),
+                          Text('17:00 PM')
+                        ],
+                      ),
+                      const SizedBox(width: 20,),
+                      Column(
+                        children: const <Widget> [
+                          Text('For', style: TextStyle(fontSize: 14),),
+                          Text('My Self')
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                const Divider(color: Colors.black,),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column( 
+                      children: [
+                        Text('Appointment Type', style: TextStyle(fontSize: 14),),
+                        Text('Loose Filling')
+                      ],
+                    ),
+                    const SizedBox(width: 20,),
+                    Column(
+                      children: [
+                        ElevatedButton(
+                          child: Text('Option'),
+                          onPressed: (){}, 
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),

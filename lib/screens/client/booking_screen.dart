@@ -43,7 +43,8 @@ class _BookingScreenState extends State<BookingScreen> {
           title: const Text('Book An Appointment'),
           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
+              // Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
+              Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back),
           ),

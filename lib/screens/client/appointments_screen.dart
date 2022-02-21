@@ -1,6 +1,7 @@
 import 'package:drapp/data/booked_appointments.dart';
 import 'package:drapp/screens/client/home_screen.dart';
 import 'package:drapp/widgets/appointment_item.dart';
+import 'package:drapp/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentsScreen extends StatefulWidget {
@@ -77,16 +78,21 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
                 ],
               ),
             ),
+            if(_isUpcoming)
             Padding(
               padding: const EdgeInsets.all(16),
               child: SizedBox(
-                height: 400,
+                height: 420,
                 child: ListView.builder(
                   itemCount: APPOINTMENTS.length,
                   itemBuilder: (ctx, index) => AppointmentItem()
                 ),
               ),
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: PrimaryButton('Book New Appointment'),
+            ), 
           ],
         ),
       ),
