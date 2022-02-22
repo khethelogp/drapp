@@ -1,3 +1,4 @@
+import 'package:drapp/screens/client/booking_screen.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -15,7 +16,9 @@ class PrimaryButton extends StatelessWidget {
           padding: const EdgeInsets.all(20)
         ),
         child: Text(btnText),
-        onPressed: () {}, 
+        onPressed: () {
+          Navigator.of(context).pushNamed(BookingScreen.routeName);
+        }, 
       ),
     );
   }

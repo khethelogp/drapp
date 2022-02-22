@@ -1,10 +1,12 @@
 import 'package:drapp/screens/admin/admin_home_screen.dart';
+import 'package:drapp/screens/client/appointments_screen.dart';
+import 'package:drapp/screens/client/profile_screen.dart';
 import 'package:drapp/screens/page_not_found.dart';
-import 'package:drapp/screens/user-screens/availability_screen.dart';
-import 'package:drapp/screens/user-screens/booking_screen.dart';
+import 'package:drapp/screens/client/availability_screen.dart';
+import 'package:drapp/screens/client/booking_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:drapp/screens/user-screens/home_screen.dart';
+import 'package:drapp/screens/client/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
   /* Our color codes: #0d173c 
   #0cdec8     #b7e1dd.   #f0f5f7 */
   // somthing is off with git
+  // Develop
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: const BookingScreen(),
+      home: const HomeScreen(),
       // home: Availability(),
       // home: const HomeScreen(),
       // home: const AdminHomeScreen(),
@@ -49,7 +52,9 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (ctx) => const HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => const AdminHomeScreen(),
         Availability.routeName: (ctx) => const Availability(),
+        AppointmentsScreen.routeName: (ctx) => const AppointmentsScreen(),
         BookingScreen.routeName: (ctx) => const BookingScreen(),
+        Profile.routeName: (ctx) => const Profile()
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => const PageNotFound());
