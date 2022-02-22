@@ -94,8 +94,10 @@ class _AuthFormState extends State<AuthForm> {
                         textCapitalization: TextCapitalization.words,
                         enableSuggestions: false,
                         validator: (value) {
-                          if(value!.isEmpty || value.length < 4){
-                            return 'Please enter a atleast 4 characters';
+                          if(value!.isEmpty) {
+                            return 'Username is required';
+                          } else if(value.length < 4){
+                            return 'Please enter atleast 4 characters';
                           }
           
                           return null;
@@ -214,35 +216,3 @@ class _AuthFormState extends State<AuthForm> {
     );
   }
 }
-
-
-
-
-/* 
-  Widget _buildPasswordField (String key, String label){
-    return TextFormField(
-      key: ValueKey(key),
-      obscureText: !_passwordVisible,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(),
-        labelText: label,
-        // hintText: 'Enter your password',
-        suffixIcon: IconButton(
-          icon: Icon(
-            _passwordVisible ? Icons.visibility_off : Icons.visibility,
-            color: Theme.of(context).primaryColor,
-          ),
-          onPressed: _toggleVisibility 
-        )
-      ),
-      validator: (value) {
-        if(value!.isEmpty || value.length < 6) {
-          return 'Password must be atleast 7 characters long';
-        }
-        return null;
-      },
-      onSaved: (value) {
-        _userPassword = value!;
-      },
-    );
-  } */

@@ -102,7 +102,7 @@ class Availability extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            PrimaryButton('Book New Appointment')
+                            const PrimaryButton('Book New Appointment')
                           ],
                         ),
                       ),
