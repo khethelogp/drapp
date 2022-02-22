@@ -37,65 +37,74 @@ class _AppointmentItemState extends State<AppointmentItem> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Jul'),
+                const Text('Jul'),
                 Text('12', style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 30
                 ),),
-                Text('WED'),
+                const Text('WED'),
               ],
             ),
           ),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  color: Colors.cyan,
+                  margin: const EdgeInsets.only(bottom: 5),
                   child: Row(
-                    children: <Widget> [
-                      Column(
-                        children: const <Widget> [
-                          Text('Time', style: TextStyle(fontSize: 14),),
-                          Text('17:00 PM')
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column( 
+                        children: const <Widget>[
+                          Text('Time', style: TextStyle(fontSize: 10),),
+                          Text('17:00', style: TextStyle(fontSize: 12)),
                         ],
                       ),
                       const SizedBox(width: 20,),
-                      Column(
-                        children: const <Widget> [
-                          Text('For', style: TextStyle(fontSize: 14),),
-                          Text('My Self')
+                      Column( 
+                        children: const <Widget>[
+                          Text('For', style: TextStyle(fontSize: 10),),
+                          Text('MySelf', style: TextStyle(fontSize: 12)),
                         ],
                       )
                     ],
                   ),
                 ),
-                const Divider(color: Colors.black,),
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column( 
-                      children: [
-                        Text('Appointment Type', style: TextStyle(fontSize: 14),),
-                        Text('Loose Filling')
-                      ],
-                    ),
-                    const SizedBox(width: 20,),
-                    Column(
-                      children: [
-                        ElevatedButton(
-                          child: Text('Option'),
-                          onPressed: (){}, 
-                        )
-                      ],
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Theme.of(context).colorScheme.secondary, width: 2)
                     )
-                  ],
-                )
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column( 
+                        children: const <Widget>[
+                          Text('Appointment Type', style: TextStyle(fontSize: 10),),
+                          Text('Loose filling', style: TextStyle(fontSize: 12)),
+                        ],
+                      ),
+                      const SizedBox(width: 20,),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            child: const Text('Option'),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.grey[400])
+                            ),
+                            onPressed: (){}, 
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
