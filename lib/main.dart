@@ -1,4 +1,5 @@
 import 'package:drapp/screens/admin/admin_home_screen.dart';
+import 'package:drapp/screens/auth_screen.dart';
 import 'package:drapp/screens/client/appointments_screen.dart';
 import 'package:drapp/screens/client/profile_screen.dart';
 import 'package:drapp/screens/page_not_found.dart';
@@ -41,14 +42,14 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
       // home: Availability(),
       // home: const HomeScreen(),
       // home: const AdminHomeScreen(),
       // home: const AuthScreen(),
-      // initialRoute: '/', 
+      initialRoute: '/', 
       routes: {
-        // '/': (ctx) => AdminHomeScreen(),
+        '/': (ctx) => const AuthScreen(),
         HomeScreen.routeName: (ctx) => const HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => const AdminHomeScreen(),
         Availability.routeName: (ctx) => const Availability(),
