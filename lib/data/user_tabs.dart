@@ -35,13 +35,6 @@ const ADMIN_LINKS = [
     color: Colors.grey,
   ),
   Link(
-    id: 'a2',
-    title: 'Update user',
-    icon: Icons.account_circle,
-    route: '/update-user',
-    color: Colors.red,
-  ),
-  Link(
     id: 'a3',
     title: 'Users',
     icon: Icons.people,

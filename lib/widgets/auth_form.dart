@@ -46,7 +46,6 @@ class _AuthFormState extends State<AuthForm> {
   }
 
 
-
   @override
   Widget build(BuildContext context) {
     return Center(

@@ -1,3 +1,4 @@
+import 'package:drapp/screens/admin/add_user_screen.dart';
 import 'package:drapp/screens/admin/admin_home_screen.dart';
 import 'package:drapp/screens/auth_screen.dart';
 import 'package:drapp/screens/client/appointments_screen.dart';
@@ -42,20 +43,17 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      // home: const HomeScreen(),
-      // home: Availability(),
-      // home: const HomeScreen(),
-      // home: const AdminHomeScreen(),
-      // home: const AuthScreen(),
-      initialRoute: '/', 
+      home: const AdminHomeScreen(),
+      // initialRoute: '/', 
       routes: {
-        '/': (ctx) => const AuthScreen(),
+        // '/': (ctx) => const AuthScreen(),
         HomeScreen.routeName: (ctx) => const HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => const AdminHomeScreen(),
         Availability.routeName: (ctx) => const Availability(),
         AppointmentsScreen.routeName: (ctx) => const AppointmentsScreen(),
         BookingScreen.routeName: (ctx) => const BookingScreen(),
-        Profile.routeName: (ctx) => const Profile()
+        Profile.routeName: (ctx) => const Profile(),
+        AddUser.routeName: (ctx) => AddUser()
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => const PageNotFound());
