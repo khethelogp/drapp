@@ -1,4 +1,6 @@
+import 'package:drapp/data/doctors.dart';
 import 'package:drapp/screens/admin/admin_home_screen.dart';
+import 'package:drapp/widgets/user_item.dart';
 import 'package:flutter/material.dart';
 
 class UsersScreen extends StatefulWidget {
@@ -58,13 +60,25 @@ class _UsersScreenState extends State<UsersScreen> {
             ),
             const Divider(color: Colors.grey, thickness: 1,),
             Column(
-              children: const  <Widget> [
+              children: <Widget> [
                 Card(
                   elevation: 5,
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Text('Hello World'),
+                    padding: const EdgeInsets.all(16),
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      children: DOCTORS.map((e) => UserItem(e.imageUrl, e.drName)).toList(),
+                    ),
+                    /* child: ListView.builder(
+                      itemCount: DOCTORS.length,
+                      itemBuilder: (ctx, index) {
+                        return UserItem(
+                          DOCTORS[index].imageUrl,
+                          DOCTORS[index].drName
+                        );
+                      }
+                    ) */
                   )
                 )
               ],
