@@ -15,15 +15,10 @@ class _AddUserState extends State<AddUser> {
   var _isLoading = false;
 
   final _formKey = GlobalKey<FormState>();
-
   String _userName = '';
-
   String _userEmail = '';
-
   String _userPassword = '';
-
   bool _passwordVisible = false;
-
   final _passwordController = TextEditingController();
 
   @override
@@ -89,6 +84,7 @@ class _AddUserState extends State<AddUser> {
             Column(
               children: <Widget> [
                 Card(
+                  elevation: 5,
                   margin: const EdgeInsets.all(20),
                   child: Padding(
                     padding: EdgeInsets.all(16),
