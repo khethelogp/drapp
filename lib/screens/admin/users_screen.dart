@@ -21,7 +21,7 @@ class _UsersScreenState extends State<UsersScreen> {
           onPressed: (){
             Navigator.of(context).popAndPushNamed(AdminHomeScreen.routeName);
           }, 
-          icon: Icon(Icons.arrow_back)
+          icon: const Icon(Icons.arrow_back)
         ),
       ),
       body: SingleChildScrollView(
@@ -59,29 +59,27 @@ class _UsersScreenState extends State<UsersScreen> {
               ],
             ),
             const Divider(color: Colors.grey, thickness: 1,),
-            Column(
-              children: <Widget> [
-                Card(
-                  elevation: 5,
-                  margin: const EdgeInsets.all(20),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Card(
+                // elevation: 5,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Colors.grey, width: 0.5),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: SizedBox(
+                  height: 320,
                   child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      children: DOCTORS.map((e) => UserItem(e.imageUrl, e.drName)).toList(),
-                    ),
-                    /* child: ListView.builder(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ListView.builder(
                       itemCount: DOCTORS.length,
                       itemBuilder: (ctx, index) {
-                        return UserItem(
-                          DOCTORS[index].imageUrl,
-                          DOCTORS[index].drName
-                        );
-                      }
-                    ) */
+                        return UserItem(DOCTORS[index].imageUrl, DOCTORS[index].drName);
+                      } 
+                    ),
                   )
-                )
-              ],
+                ),
+              ),
             )
           ],
         ),

@@ -10,18 +10,23 @@ class UserItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
+      // color: Theme.of(context).colorScheme.secondary,
+      color: Colors.grey[300],
       child: ListTile(
         leading: CircleAvatar(
-          child: Image.network(imageUrl),
+          // backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+          backgroundImage: NetworkImage(imageUrl),
+          backgroundColor: Colors.transparent,
         ),
-        title: Text(drName),
+        title: Text(drName),                          
         trailing: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
-            SizedBox(width: 10,),
-            IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
+            IconButton(onPressed: (){}, icon: Icon(Icons.delete)),
           ],
-        )
+        ),
       )
     );
   }

@@ -1,4 +1,6 @@
 import 'package:drapp/screens/admin/add_user_screen.dart';
+import 'package:drapp/screens/admin/admin_appointments_screen.dart';
+import 'package:drapp/screens/admin/admin_availability_screen.dart';
 import 'package:drapp/screens/admin/admin_home_screen.dart';
 import 'package:drapp/screens/admin/users_screen.dart';
 import 'package:drapp/screens/auth_screen.dart';
@@ -61,7 +63,9 @@ class MyApp extends StatelessWidget {
         BookingScreen.routeName: (ctx) => const BookingScreen(),
         ProfileScreen.routeName: (ctx) => const ProfileScreen(),
         AddUser.routeName: (ctx) => AddUser(),
-        UsersScreen.routeName: (ctx) => const UsersScreen()
+        UsersScreen.routeName: (ctx) => const UsersScreen(),
+        AdminAvailabilityScreen.routeName: (ctx) => const AdminAvailabilityScreen(),
+        AdminAppointmentsScreen.routeName: (ctx) => const AdminAppointmentsScreen()
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => const PageNotFound());
