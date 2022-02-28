@@ -69,7 +69,8 @@ class MyApp extends StatelessWidget {
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => const PageNotFound());
-      }
+      },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:drapp/data/user_tabs.dart';
+import 'package:drapp/widgets/app_drawer.dart';
 import 'package:drapp/widgets/header.dart';
 import 'package:drapp/widgets/link_item.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,13 @@ class AdminHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text(''),
+        backgroundColor: Color(0x00000000),
+        // backgroundColor: Colors.transparent,
+      ),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
