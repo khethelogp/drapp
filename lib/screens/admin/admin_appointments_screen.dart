@@ -81,7 +81,8 @@ class _AdminAppointmentsScreenState extends State<AdminAppointmentsScreen> {
             ),
             if(_isUpcoming)
             Padding(
-              padding: const EdgeInsets.all(16),
+              // padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: SizedBox(
                 height: 420,
                 child: ListView.builder(
@@ -89,7 +90,7 @@ class _AdminAppointmentsScreenState extends State<AdminAppointmentsScreen> {
                   itemBuilder: (ctx, index) => AppointmentItem()
                 ),
               ),
-            ), 
+            ),
           ],
         ),
       ),
