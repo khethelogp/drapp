@@ -1,4 +1,8 @@
+import 'package:drapp/screens/admin/add_user_screen.dart';
+import 'package:drapp/screens/admin/admin_appointments_screen.dart';
+import 'package:drapp/screens/admin/admin_availability_screen.dart';
 import 'package:drapp/screens/admin/admin_home_screen.dart';
+import 'package:drapp/screens/admin/users_screen.dart';
 import 'package:drapp/screens/auth_screen.dart';
 import 'package:drapp/screens/client/appointments_screen.dart';
 import 'package:drapp/screens/client/profile_screen.dart';
@@ -6,6 +10,7 @@ import 'package:drapp/screens/page_not_found.dart';
 import 'package:drapp/screens/client/availability_screen.dart';
 import 'package:drapp/screens/client/booking_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:drapp/screens/client/home_screen.dart';
 
@@ -22,6 +27,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown
+    ]);
+
     return MaterialApp(
       title: 'Dr App',
       theme: ThemeData(
@@ -42,20 +52,20 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      // home: const HomeScreen(),
-      // home: Availability(),
-      // home: const HomeScreen(),
-      // home: const AdminHomeScreen(),
-      // home: const AuthScreen(),
-      initialRoute: '/', 
+      home: const AdminHomeScreen(),
+      // initialRoute: '/', 
       routes: {
-        '/': (ctx) => const AuthScreen(),
+        // '/': (ctx) => const AuthScreen(),
         HomeScreen.routeName: (ctx) => const HomeScreen(),
         AdminHomeScreen.routeName: (ctx) => const AdminHomeScreen(),
         Availability.routeName: (ctx) => const Availability(),
         AppointmentsScreen.routeName: (ctx) => const AppointmentsScreen(),
         BookingScreen.routeName: (ctx) => const BookingScreen(),
-        Profile.routeName: (ctx) => const Profile()
+        ProfileScreen.routeName: (ctx) => const ProfileScreen(),
+        AddUser.routeName: (ctx) => AddUser(),
+        UsersScreen.routeName: (ctx) => const UsersScreen(),
+        AdminAvailabilityScreen.routeName: (ctx) => const AdminAvailabilityScreen(),
+        AdminAppointmentsScreen.routeName: (ctx) => const AdminAppointmentsScreen()
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => const PageNotFound());
