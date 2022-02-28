@@ -1,15 +1,15 @@
 import 'package:drapp/screens/client/home_screen.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({ Key? key }) : super(key: key);
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({ Key? key }) : super(key: key);
   static const routeName =  '/profile';
 
   @override
-  _ProfileState createState() => _ProfileState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileScreenState extends State<ProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   String _userName = '';
   String _userEmail = '';
